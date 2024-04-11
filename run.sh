@@ -1,0 +1,1 @@
+docker-compose -f $1/docker-compose.yml down --rmi local && docker-compose -f $1/docker-compose.yml up -d

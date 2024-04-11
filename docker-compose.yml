@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  fugas:
+    container_name: fugas.dev.landing
+    restart: always
+    # ports:
+    #   - "80:80"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      VIRTUAL_HOST: prod.fugas.space
+      LETSENCRYPT_HOST: prod.fugas.space
+      LETSENCRYPT_EMAIL: admin@fugas.space
+      # CERT_NAME: fugas.space
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
